@@ -1,0 +1,11 @@
+table_name: event_log
+registry:
+  - id
+  - created_at
+  - user_id: { type: int, allow_null: true }
+  - session_id: { type: varchar, length: 64, allow_null: true }
+  - app: { type: varchar, length: 20, allow_null: true }
+  - module: { type: varchar, length: 40, allow_null: true }
+  - view: { type: varchar, length: 40, allow_null: true }
+  - parameters: { type: varchar, length: 1000, allow_null: true }
+  - action: { type: varchar, length: 200, allow_null: true }
