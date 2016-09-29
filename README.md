@@ -1,7 +1,7 @@
 Dinkly Event Log Plugin v1.00
 =============================
 
-SKeep track of what users are up to in your Dinkly application.
+Keep track of what users are up to in your Dinkly application.
 
 
 Installation
