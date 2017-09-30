@@ -22,7 +22,23 @@ class CoreEventLog extends BaseEventLog
 		$event->setApp($context_array['current_app_name']);
 		$event->setModule($context_array['module']);
 		$event->setView($context_array['view']);
-		$event->setParameters(http_build_query($context_array['parameters']));
+
+		if(isset($context_array['parameters']))
+		{
+			$event->setParameters(http_build_query($context_array['parameters']));	
+		}
+		else if(isset($context_array['get_params']))
+		{
+			$parameters = "GET=" . http_build_query($context_array['get_params']);
+			
+			if(isset($context_array['post_params']))
+			{
+				$parameters .= "POST=" . http_build_query($context_array['post_params']);
+			}
+
+			$event->setParameters($parameters);
+		}
+
 		$event->setAction($action);
 		$event->setUserId($user_id);
 		$event->save();
