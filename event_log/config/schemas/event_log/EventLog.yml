@@ -7,5 +7,5 @@ registry:
   - app: { type: varchar, length: 20, allow_null: true }
   - module: { type: varchar, length: 40, allow_null: true }
   - view: { type: varchar, length: 40, allow_null: true }
-  - parameters: { type: text, lallow_null: true }
+  - parameters: { type: text, allow_null: true }
   - action: { type: varchar, length: 200, allow_null: true }
